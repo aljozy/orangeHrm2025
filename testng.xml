@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestNG Suite">
+    <test thread-count="2" name="OrangeHRMTest" parallel="methods" >
+        <classes>
+            <!-- Add your test class here -->
+            <class name="org.orange.tests.LoginPageTest"/>
+            <class name="org.orange.tests.DashboardPageTest"/>
+
+        </classes>
+    </test>
+</suite>
