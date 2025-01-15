@@ -3,7 +3,6 @@ package org.orange.driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.orange.utils.ReadPropertyFile;
-
 import java.time.Duration;
 import java.util.Objects;
 
