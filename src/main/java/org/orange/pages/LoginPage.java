@@ -1,5 +1,6 @@
 package org.orange.pages;
 import org.openqa.selenium.By;
+import org.orange.enums.WaitStrategy;
 
 public final class LoginPage extends BasePage{
 
@@ -20,7 +21,7 @@ public final class LoginPage extends BasePage{
     }
 
     private LoginPage clickLoginBtn() throws Exception {
-        doClick(loginBtn);
+        doClick(loginBtn, WaitStrategy.CLICKABLE);
         return this;
     }
     public DashboardPage loginUser(String username,String password) throws Exception {

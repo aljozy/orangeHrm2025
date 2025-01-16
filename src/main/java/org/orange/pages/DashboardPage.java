@@ -1,9 +1,12 @@
 package org.orange.pages;
 
 import org.openqa.selenium.By;
+import org.orange.enums.WaitStrategy;
 
 
-public class DashboardPage extends BasePage{
+public final class DashboardPage extends BasePage{
+
+
 
     private final By attendanceElement = By.xpath(("//div[contains(@class, 'card-profile-record')]/p[contains(@class, 'card-details')]"));
     private final By logoutBtn = By.xpath("//div[@class='oxd-topbar-header-userarea']//ul//li/ul/li[.='Logout']");
@@ -11,17 +14,17 @@ public class DashboardPage extends BasePage{
 
 
     private DashboardPage clickLogoutBtn() throws Exception {
-        //java 8 lamda
-            doClick(logoutBtn);
+        //java 8 lambda
+            doClick(logoutBtn, WaitStrategy.CLICKABLE);
          return this;
     }
 
     private DashboardPage logoutElement() throws Exception {
-        doClick(usernameTxtBox);
+        doClick(usernameTxtBox,WaitStrategy.CLICKABLE);
         return this;
     }
 
-    public String getUsernameTxtBox(){
+    public String getUsernameTxtBox() throws Exception {
         return getTextFromField(usernameTxtBox);
     }
 
@@ -29,7 +32,7 @@ public class DashboardPage extends BasePage{
          logoutElement().clickLogoutBtn();
         return new LoginPage();
     }
-    public String getAttendance(){
+    public String getAttendance() throws Exception {
         return getTextFromField(attendanceElement);
     }
 }
