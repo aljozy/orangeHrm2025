@@ -1,6 +1,5 @@
 package org.orange.pages;
 import org.openqa.selenium.By;
-import org.openqa.selenium.bidi.log.Log;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.orange.driver.DriverManager;
@@ -11,6 +10,7 @@ import java.time.Duration;
 
 
 public class BasePage {
+
 
     protected void doClick(By by, WaitStrategy waitStrategy) throws Exception {
         if(waitStrategy == WaitStrategy.CLICKABLE) {
@@ -40,18 +40,19 @@ public class BasePage {
         return DriverManager.getDriver().getCurrentUrl();
     }
 
+
     private void waitForEnable(By by,Long timeout){
         new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeout))
                 .until(driver -> DriverManager.getDriver().findElement(by).isEnabled());
     }
     private void elementToBeClickable(By by, Long timeout) {
         new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeout))
-                .until(condition-> ExpectedConditions.elementToBeClickable(by));
+                .until(condition -> ExpectedConditions.elementToBeClickable(by));
 
     }
     private void elementToBePresent(By by, Long timeout) {
         new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeout))
-                .until(condition-> ExpectedConditions.presenceOfElementLocated(by));
+                .until(condition -> ExpectedConditions.presenceOfElementLocated(by));
 
     }
 

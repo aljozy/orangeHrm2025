@@ -2,6 +2,8 @@ package org.orange.pages;
 
 import org.openqa.selenium.By;
 import org.orange.enums.WaitStrategy;
+import org.orange.reports.ExtentManager;
+import org.orange.reports.ExtentReport;
 
 
 public final class DashboardPage extends BasePage{
@@ -16,6 +18,7 @@ public final class DashboardPage extends BasePage{
     private DashboardPage clickLogoutBtn() throws Exception {
         //java 8 lambda
             doClick(logoutBtn, WaitStrategy.CLICKABLE);
+        ExtentManager.getExtText().pass("Logout from the  orange hrm");
          return this;
     }
 

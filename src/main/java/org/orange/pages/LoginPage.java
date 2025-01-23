@@ -1,6 +1,8 @@
 package org.orange.pages;
 import org.openqa.selenium.By;
 import org.orange.enums.WaitStrategy;
+import org.orange.reports.ExtentManager;
+import org.orange.reports.ExtentReport;
 
 public final class LoginPage extends BasePage{
 
@@ -28,9 +30,11 @@ public final class LoginPage extends BasePage{
         enterUserName(username)
                 .enterPasswrd(password)
                 .clickLoginBtn();
+        ExtentManager.getExtText().pass("Login to the orange hrm");
         return new DashboardPage();
     }
     public String getTitle(){
+
       return  getPageTitle();
     }
 

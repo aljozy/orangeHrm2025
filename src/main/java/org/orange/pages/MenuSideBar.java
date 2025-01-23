@@ -2,6 +2,8 @@ package org.orange.pages;
 
 import org.openqa.selenium.By;
 import org.orange.enums.WaitStrategy;
+import org.orange.reports.ExtentManager;
+import org.orange.reports.ExtentReport;
 
 
 public class MenuSideBar extends BasePage {
@@ -15,6 +17,7 @@ public class MenuSideBar extends BasePage {
     }
 
     public String getPageURl(){
+        ExtentManager.getExtText().info(getUrl());
         return getUrl();
     }
 }

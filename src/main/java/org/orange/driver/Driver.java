@@ -13,8 +13,8 @@ public class Driver {
     public static WebDriver initDriver() throws Exception {
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
-        System.out.println("browser opened successfully");
+//        options.addArguments("--headless=new");
+
         if (Objects.isNull(DriverManager.getDriver())) {
 
             DriverManager.setDriver(new ChromeDriver(options));
@@ -27,7 +27,7 @@ public class Driver {
         if(Objects.nonNull(DriverManager.getDriver())) {
             DriverManager.getDriver().quit();
             DriverManager.unload();
-            System.out.println("browser closed successfully");
+
         }
     }
 }
