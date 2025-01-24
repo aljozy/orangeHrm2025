@@ -7,14 +7,15 @@ public class ExtentManager {
 
     private static ThreadLocal<ExtentTest> extText = new ThreadLocal<>();
 
-    public static ExtentTest getExtText() {
+      static ExtentTest getExtText() {
         return extText.get();
     }
 
-    public static void setExtText(ExtentTest test) {
+    //making it default access modifier so it can be exposed to other packages
+     static void setExtText(ExtentTest test) {
         extText.set(test);
     }
-    public static void unload(){
+     static void unload(){
         extText.remove();
     }
 }

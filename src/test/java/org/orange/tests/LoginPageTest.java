@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions;
 import org.orange.pages.DashboardPage;
 import org.orange.pages.LoginPage;
 import org.orange.pages.MenuSideBar;
-import org.orange.reports.ExtentReport;
 import org.orange.utils.ReadPropertyFile;
 
 import org.testng.annotations.Test;
@@ -16,7 +15,7 @@ public class LoginPageTest extends BaseTest {
 
     @Test(description = "Login page test")
     public void test1() throws Exception {
-        ExtentReport.createTest("Login to orange hrm");
+
 
         LoginPage loginPage = new LoginPage();
         MenuSideBar menuSideBar =  new MenuSideBar();
